@@ -83,7 +83,7 @@ data ibm_is_image "ubuntu-20-04-3" {
 
 locals {
   version         = var.image_version
-  last_image_name = "${var.image_name}-${local.version}"
+  last_image_name = "${var.image_name}-${local.version}-${random_id.this.hex}"
 }
 
 resource "null_resource" "run_packer" {
