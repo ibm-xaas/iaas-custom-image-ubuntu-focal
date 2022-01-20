@@ -88,7 +88,7 @@ locals {
 
 resource "null_resource" "run_packer" {
   triggers = {
-    when_version_changed = join("-", tolist([var.image_name, var.image_version]))
+    when_version_changed = join("-", tolist([var.image_name, var.image_version, random_id.this.hex]))
   }
 
   provisioner "local-exec" {
