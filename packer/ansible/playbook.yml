@@ -34,3 +34,9 @@
 
   roles:
     - geerlingguy.docker
+
+- name: play Install the latest goss
+  hosts: default
+  become: true
+  roles:
+    - vantaworks.goss
