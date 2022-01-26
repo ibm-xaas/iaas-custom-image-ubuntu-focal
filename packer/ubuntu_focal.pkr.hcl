@@ -80,6 +80,11 @@ build {
     "source.ibmcloud-vpc.ubuntu-focal"
   ]
 
+  provisioner "comment" {
+    comment = "GENESIS"
+    ui = true
+    bubble_text = true
+  }
   provisioner "ansible" {
     playbook_file = var.ansible_file
   }
@@ -87,5 +92,10 @@ build {
     tests = [
       "./goss/goss.yaml"
     ]
+  }
+    provisioner "comment" {
+    comment = "SEUNGYEOP"
+    ui = true
+    bubble_text = true
   }
 }

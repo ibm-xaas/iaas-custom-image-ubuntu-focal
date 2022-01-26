@@ -98,7 +98,7 @@ ansible-galaxy install geerlingguy.docker
 ansible-galaxy install vantaworks.goss
 packer version
 packer init ./ubuntu_focal.pkr.hcl
-packer build \
+timeout 60m packer build \
 -var region=${var.region} \
 -var subnet_id=${ibm_is_subnet.this.id} \
 -var security_group_id=${ibm_is_vpc.this.default_security_group} \
