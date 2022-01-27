@@ -93,7 +93,7 @@ build {
       "./goss/goss.yaml"
     ]
   }
-    provisioner "comment" {
+  provisioner "comment" {
     comment = "SEUNGYEOP"
     ui = true
     bubble_text = true
