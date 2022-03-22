@@ -1,3 +1,4 @@
+[![pre-commit](https://github.com/ibm-xaas/iaas-custom-image-ubuntu-focal/actions/workflows/pre-commit.yaml/badge.svg)](https://github.com/ibm-xaas/iaas-custom-image-ubuntu-focal/actions/workflows/pre-commit.yaml)
 # iaas-custom-image-ubuntu-focal
 ubuntu 20.04 custom image for ibm cloud
 - removed unattended upgrades
@@ -5,7 +6,7 @@ ubuntu 20.04 custom image for ibm cloud
 
 ## how to test (create a custom image in us-south region)
 ```
-export IBMCLOUD_API_KEY=<YOUR IBMCLOUD API KEY>
+export IBMCLOUD_API_KEY=<YOUR IBMCLOUD API KEY>  # pragma: allowlist secret
 docker-compose run packer-ubuntu-focal  ./build_image.sh
 ```
 
