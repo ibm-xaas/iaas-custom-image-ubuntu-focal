@@ -1,3 +1,4 @@
+[![pre-commit](https://github.com/ibm-xaas/iaas-custom-image-ubuntu-focal/actions/workflows/pre-commit.yaml/badge.svg)](https://github.com/ibm-xaas/iaas-custom-image-ubuntu-focal/actions/workflows/pre-commit.yaml)
 # iaas-custom-image-ubuntu-focal
 ubuntu 20.04 custom image for ibm cloud
 - removed unattended upgrades
