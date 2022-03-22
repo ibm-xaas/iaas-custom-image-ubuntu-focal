@@ -33,7 +33,7 @@ resource "ibm_is_vpc" "this" {
   resource_group = data.ibm_resource_group.this.id
 }
 
-resource ibm_is_subnet "this" {
+resource "ibm_is_subnet" "this" {
   name                     = "${var.prefix}-${var.region}-${random_id.this.hex}-subnet"
   zone                     = data.ibm_is_zones.this.zones[0]
   vpc                      = ibm_is_vpc.this.id
@@ -77,7 +77,7 @@ resource "ibm_is_security_group_rule" "ssh" {
   }
 }
 
-data ibm_is_image "ubuntu-20-04-3" {
+data "ibm_is_image" "ubuntu-20-04-3" {
   name = "ibm-ubuntu-20-04-3-minimal-amd64-1"
 }
 
@@ -115,7 +115,7 @@ EOH
   }
 }
 
-data ibm_is_image "ubuntu-20-04-3-docker" {
+data "ibm_is_image" "ubuntu-20-04-3-docker" {
   depends_on = [
     null_resource.run_packer
   ]
