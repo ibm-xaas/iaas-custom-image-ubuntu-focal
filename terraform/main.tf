@@ -26,6 +26,13 @@ locals {
 resource "ibm_is_ssh_key" "this" {
   name       = "${var.prefix}-${var.region}-${random_id.this.hex}-ssh-key"
   public_key = local.ssh_key_public
+
+  # temporary idempotent workaround until RCS-3945/PR-3701 be merged
+  lifecycle {
+    ignore_changes = [
+      public_key,
+    ]
+  }
 }
 
 resource "ibm_is_vpc" "this" {
@@ -101,7 +108,6 @@ packer init ./ubuntu_focal.pkr.hcl
 timeout 60m packer build \
 -var region=${var.region} \
 -var subnet_id=${ibm_is_subnet.this.id} \
--var security_group_id=${ibm_is_vpc.this.default_security_group} \
 -var resource_group_id=${data.ibm_resource_group.this.id} \
 -var vsi_base_image_name=${data.ibm_is_image.ubuntu-20-04-3.name} \
 -var vsi_profile=${var.profile} \

@@ -7,7 +7,7 @@ ubuntu 20.04 custom image for ibm cloud
 ## how to test (create a custom image in us-south region)
 ```
 export IBMCLOUD_API_KEY=<YOUR IBMCLOUD API KEY>
-docker-compose run packer-ubuntu-focal  ./build_image.sh
+docker-compose run iaas-custom-image-ubuntu-focal ./build_image.sh
 ```
 
 Due to the limitation of the current [packer-plugin-ibmcloud](https://github.com/IBM/packer-plugin-ibmcloud), it's a little difficult to create custom images with multiple regions, that's doable just a little more consideration to be working on. It's good enough for now.
